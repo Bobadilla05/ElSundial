@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios y Reseñas — El Sundial</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html">
+                <svg class="logo-nav" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+                    <path d="M40 75 Q50 62 60 75 Q70 88 80 75" fill="none" stroke="#3dbdd6" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M25 78 L60 30 L95 78 Z" fill="rgba(46,107,71,0.25)" stroke="#2e6b47" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M43 78 L60 52 L77 78 Z" fill="rgba(26,61,43,0.5)" stroke="#1a3d2b" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="60" cy="38" r="7" fill="#c9a84c" opacity="0.9"/>
+                </svg>
+            </a>
+            <ul>
+                <li><a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="instalaciones.html"><i class="fa-solid fa-utensils"></i> Instalaciones</a></li>
+                <li><a href="actividades.html"><i class="fa-solid fa-person-swimming"></i> Actividades</a></li>
+                <li><a href="ubicacion.html"><i class="fa-solid fa-location-dot"></i> Ubicación</a></li>
+                <li><a href="comentarios.html"><i class="fa-solid fa-comments"></i> Comentarios</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO -->
+    <section class="page-hero">
+        <span class="etiqueta-seccion">Tu opinión importa</span>
+        <h1>Comentarios y Reseñas</h1>
+        <p>Lee lo que opinan nuestros visitantes y comparte tu experiencia</p>
+        <div class="linea-dorada" style="margin-top:16px;"></div>
+    </section>
+
+    <!-- RESUMEN DE CALIFICACIÓN -->
+    <div style="background: var(--verde-oscuro); padding: 50px 40px; text-align: center;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; max-width: 700px; margin: 0 auto;">
+            <div>
+                <div style="font-family:'Playfair Display',serif; font-size:5rem; color:var(--dorado); line-height:1;" id="prom-numero">—</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; margin-top:6px;">Calificación promedio</div>
+                <div style="color:var(--dorado); font-size:1.4rem; letter-spacing:4px; margin-top:6px;" id="prom-estrellas">☆☆☆☆☆</div>
+            </div>
+            <div style="height:80px; width:1px; background:rgba(255,255,255,0.15);"></div>
+            <div>
+                <div style="font-family:'Playfair Display',serif; font-size:5rem; color:var(--dorado); line-height:1;" id="total-resenas">0</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; margin-top:6px;">Reseñas publicadas</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMENTARIOS -->
+    <div class="comentarios-layout">
+
+        <!-- FORMULARIO -->
+        <div class="formulario-card">
+            <h2>Deja tu Reseña</h2>
+            <p>¡Cuéntanos cómo fue tu visita a El Sundial!</p>
+
+            <div id="alerta-form" class="alerta"></div>
+
+            <form id="form-comentario" novalidate>
+
+                <div class="form-grupo">
+                    <label for="nombre">Tu nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María García" maxlength="60" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="visita">¿Cuándo nos visitaste?</label>
+                    <select id="visita" name="visita">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Esta semana">Esta semana</option>
+                        <option value="Este mes">Este mes</option>
+                        <option value="Hace 2-3 meses">Hace 2-3 meses</option>
+                        <option value="Hace más de 6 meses">Hace más de 6 meses</option>
+                        <option value="Hace más de un año">Hace más de un año</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label>Calificación</label>
+                    <div class="estrellas-input" role="group" aria-label="Calificación en estrellas">
+                        <input type="radio" id="star5" name="estrellas" value="5">
+                        <label for="star5" title="Excelente">★</label>
+                        <input type="radio" id="star4" name="estrellas" value="4">
+                        <label for="star4" title="Muy bueno">★</label>
+                        <input type="radio" id="star3" name="estrellas" value="3">
+                        <label for="star3" title="Bueno">★</label>
+                        <input type="radio" id="star2" name="estrellas" value="2">
+                        <label for="star2" title="Regular">★</label>
+                        <input type="radio" id="star1" name="estrellas" value="1">
+                        <label for="star1" title="Malo">★</label>
+                    </div>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="comentario">Tu experiencia</label>
+                    <textarea id="comentario" name="comentario" placeholder="Cuéntanos qué fue lo que más te gustó, cómo fueron las actividades, la comida, el trato..." maxlength="500" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">
+                    <i class="fa-solid fa-paper-plane"></i> &nbsp; Publicar Reseña
+                </button>
+
+            </form>
+        </div>
+
+        <!-- LISTA DE RESEÑAS -->
+        <div>
+            <span class="etiqueta-seccion" style="display:block; margin-bottom:12px;">Lo que dicen nuestros visitantes</span>
+            <h2 style="font-family:'Playfair Display',serif; color:var(--verde-oscuro); font-size:1.8rem; margin-bottom:28px;">Opiniones</h2>
+
+            <div class="resenas-lista" id="lista-resenas">
+
+            </div>
+
+            <div id="sin-resenas" class="sin-resenas" style="display:none;">
+                <i class="fa-regular fa-comment-dots"></i>
+                <p>Aún no hay reseñas. ¡Sé el primero en compartir tu experiencia!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="extra">
+        <h2>¿Listo para Vivir la Experiencia?</h2>
+        <p>Ven y crea tus propios recuerdos en El Sundial.</p>
+        <a href="ubicacion.html" class="btn">Cómo Llegar</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="redes-footer">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p>© 2026 El Sundial · Cascada El Meco · San Luis Potosí, México</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+    (function inyectarEjemplos() {
+        const STORAGE_KEY = 'sundial_resenas';
+        let arr;
+        try { arr = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch { arr = null; }
+
+        if (!arr) {
+            const ejemplos = [
+                {
+                    nombre: 'Laura Martínez',
+                    visita: 'Este mes',
+                    estrellas: 5,
+                    comentario: 'Una experiencia increíble. La cascada es majestuosa y el agua está perfecta para nadar. Definitivamente volvería con toda la familia. El buffet estuvo delicioso.',
+                    color: '#1a3d2b',
+                    fecha: '30 de abril de 2026'
+                },
+                {
+                    nombre: 'Carlos Rodríguez',
+                    visita: 'Hace 2-3 meses',
+                    estrellas: 5,
+                    comentario: 'El tubing fue la actividad más divertida que he hecho en mucho tiempo. El personal es muy amable y profesional. El lugar está muy bien cuidado y limpio.',
+                    color: '#1e8fa5',
+                    fecha: '15 de marzo de 2026'
+                },
+                {
+                    nombre: 'Ana Sofía Torres',
+                    visita: 'Este mes',
+                    estrellas: 4,
+                    comentario: 'Hermoso lugar, vale totalmente la pena el viaje. Las vistas desde los miradores son espectaculares. Solo recomendaría mejorar las señalizaciones en el camino.',
+                    color: '#c9a84c',
+                    fecha: '22 de abril de 2026'
+                }
+            ];
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(ejemplos));
+        }
+
+        function actualizarResumen() {
+            let datos;
+            try { datos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { datos = []; }
+
+            const total = datos.length;
+            const prom = total ? (datos.reduce((s, r) => s + r.estrellas, 0) / total) : 0;
+
+            document.getElementById('total-resenas').textContent = total;
+            document.getElementById('prom-numero').textContent = total ? prom.toFixed(1) : '—';
+
+            if (total) {
+                const llenas = Math.round(prom);
+                document.getElementById('prom-estrellas').textContent = '★'.repeat(llenas) + '☆'.repeat(5 - llenas);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            actualizarResumen();
+
+            const form = document.getElementById('form-comentario');
+            if (form) {
+                form.addEventListener('submit', () => {
+                    setTimeout(actualizarResumen, 100);
+                });
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
