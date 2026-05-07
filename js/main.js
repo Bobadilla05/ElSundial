@@ -1,4 +1,4 @@
-// --- MENÚ HAMBURGUESA RESPONSIVE ---
+// --- MENÚ RESPONSIVO ---
 function initNavHamburger() {
     const hamburger = document.querySelector('.hamburger');
     const navUl     = document.querySelector('nav ul');
